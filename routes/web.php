@@ -73,7 +73,8 @@ Route::get('/about', function () {
 
 
 
-Route::resource('job', JobController::class);
+
+Route::resource('job', JobController::class)->middleware("auth");
 
 
 
@@ -91,6 +92,6 @@ Route::get('employee/{id}', function($id){
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
