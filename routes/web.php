@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Models\Employee;
@@ -95,3 +98,15 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
+
+
+
+
+
+
+Route::resource('products', ProductController::class)->middleware('auth');
+Route::resource('product-types', ProductTypeController::class)->middleware('auth');
+
+Route::get('/categories/create', [CategoryController ::class, 'create'])->name('categories.create');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+Route::resource('categories', CategoryController::class);

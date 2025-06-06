@@ -29,6 +29,9 @@
         <!-- <x-nav-link href="/about" active="{{ request()->is('about') }}">About</x-nav-link> -->
         <x-nav-link href="/job" active="{{ request()->is('job') }}">Jobs</x-nav-link>
         <x-nav-link href="/employee" active="{{ request()->is('employee') }}">Employees</x-nav-link>
+        <x-nav-link href="/products" active="{{ request()->is('products') }}">Products</x-nav-link>
+        <x-nav-link href="/categories" active="{{ request()->is('categories') }}">Categoris</x-nav-link>
+        <x-nav-link href="/product-types" active="{{ request()->is('product-types') }}">Product types</x-nav-link>
         <x-nav-link href="/about" active="{{ request()->is('about') }}">About</x-nav-link>
 </div>
           </div>
